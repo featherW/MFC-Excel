@@ -6,11 +6,18 @@ MFC表格操作模板
 0.1 在项目中添加以下两个文件
 
 CExcelOperation.h
+
 CExcelOperation.cpp
+
+---
+
 
 1.1 右键CExcelOperation.cpp，选择属性
 
 1.2 C/C++ -> 预编译头 ->不使用预编译头
+
+---
+
 
 2.1 选中MFC项目中，右键添加类，选择TypeLib  
 
