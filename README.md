@@ -19,11 +19,17 @@ CExcelOperation.cpp
 2.3 接口选择以下七项
 
 _Application
+
 _Workbook
+
 _Worksheet
+
 Workbooks
+
 Worksheets
+
 Sheets
+
 Rangs
 
 2.4 将新生成的七个头文件中的"#import "...EXCEL.EXE" no_namespace"去掉
