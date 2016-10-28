@@ -42,3 +42,27 @@ Rangs
 2.4 将新生成的七个头文件中的"#import "...EXCEL.EXE" no_namespace"去掉
 
 2.5 将CRange.h中的VARIANT DialogBox()改成VARIANT _DialogBox()
+
+
+---
+
+注意事项
+
+1 如果在写操作后出现程序退出后，Excel进程没有退出。
+
+可以在int CExcelOperation::closeExcelFile()试试添加m_wbExcelBook.Save();
+
+```
+int CExcelOperation::closeExcelFile()
+{
+	m_rangeBasicCells.ReleaseDispatch();
+	m_wsSheet.ReleaseDispatch();
+	m_wbExcelBook.Save();
+	m_wbExcelBook.ReleaseDispatch();
+	m_wbsExcelBooks.Close();
+	m_wbsExcelBooks.ReleaseDispatch();
+	m_appExcelServer.Quit();
+	m_appExcelServer.ReleaseDispatch();
+	return 0;
+}
+```
