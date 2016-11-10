@@ -155,8 +155,8 @@ HCURSOR CExcelClassDlg::OnQueryDragIcon()
 void MyCallBack(void *hFun)
 {
 	CExcelOperation *pExcelOper= (CExcelOperation*)hFun;
-	BYTE i = 0;
-	BYTE j = 0;
+	long i = 0;
+	long j = 0;
 	CString csPortTmp;
 	long lMaxRowNum = pExcelOper->getMaxRowNum();
 	long lMaxColNum = pExcelOper->getMaxColNum();
