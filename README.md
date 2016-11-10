@@ -66,3 +66,26 @@ int CExcelOperation::closeExcelFile()
 	return 0;
 }
 ```
+
+2 写操作示例
+
+```
+void MyCallBack(void *hFun)
+{
+	CExcelOperation *pExcelOper= (CExcelOperation*)hFun;
+	long i = 0;
+	long j = 0;
+	CString csPortTmp;
+	long lMaxRowNum = pExcelOper->getMaxRowNum();
+	long lMaxColNum = pExcelOper->getMaxColNum();
+	CRange rangeBasicCells = pExcelOper->getCell();
+	CRange rangeTempCells;
+	COleVariant covResult;
+	string strValue = "abcdefghijklmn";
+
+	i = 1;
+	j = 1;
+	rangeTempCells.AttachDispatch(rangeBasicCells.get_Item(COleVariant(i), COleVariant(j)).pdispVal);
+	rangeTempCells.put_NumberFormat(COleVariant(strValue.c_str()));
+}
+```
